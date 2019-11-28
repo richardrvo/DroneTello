@@ -4,15 +4,21 @@
 
 import socket, time
 
-host = ''
+host = ''   #Inserir seu Ip
 port = 9000
 locaddr = (host,port)
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-tello_address = ('192.168.10.1', 8889)
+tello_address = ('192.168.10.1', 8889) #Ip e Porta do Tello
 sock.bind(locaddr)
 
-sock.sendto(‘command’.encode(encoding="utf-8"), tello_address)
+#
+#ao enviar 'command' para o drone, o mesmo começa sua operação e assim é possivel enviar mais e mais comandos utilizando
+o sock.sendto
+Os comandos aceitos pelo drone se encontram na SDK ou nesse repositorio.
+#
+
+sock.sendto(‘command’.encode(encoding="utf-8"), tello_address) 
 time.sleep(5)
 
 # Takeoff
